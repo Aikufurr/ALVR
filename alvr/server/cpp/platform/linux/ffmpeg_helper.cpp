@@ -264,10 +264,10 @@ alvr::VkFrameCtx::VkFrameCtx(VkContext & vkContext, vk::ImageCreateInfo image_cr
   frames_ctx->width = image_create_info.extent.width;
   frames_ctx->height = image_create_info.extent.height;
   frames_ctx->initial_pool_size = 0;
-  if ((err = av_hwframe_ctx_init(ctx)) < 0) {
-    av_buffer_unref(&ctx);
-    throw alvr::AvException("Failed to initialize vulkan frame context:", err);
-  }
+  // if ((err = av_hwframe_ctx_init(ctx)) < 0) {
+  //   av_buffer_unref(&ctx);
+  //   throw alvr::AvException("Failed to initialize vulkan frame context:", err);
+  // }
 }
 
 alvr::VkFrameCtx::~VkFrameCtx()
